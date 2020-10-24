@@ -1,6 +1,6 @@
 {
-  "name": "react-pwa-install",
-  "version": "1.1.0",
+  "name": "@amtpub/react-pwa-install",
+  "version": "1.0.12",
   "description": "Install support for your PWA on several platforms",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -33,9 +33,12 @@
     "react-dom": "^16.13.1"
   },
   "author": "",
-  "homepage": "",
+  "homepage": "https://github.com/amt-pub/react-pwa-install#readme",
   "license": "MIT",
-  "repository": "https://github.com/zoltangy/react-pwa-install",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amt-pub/react-pwa-install.git"
+  },
   "keywords": [
     "react-component",
     "react",
@@ -43,5 +46,12 @@
     "install",
     "A2HS",
     "add to home screen"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/amt-pub/react-pwa-install/issues"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  }
 }
