@@ -10,10 +10,15 @@ const InstallDialog = (props) => {
   const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
   return (
     <Dialog open={props.open} onClose={props.onClose} aria-labelledby="dialog-title" fullScreen={fullScreen}>
-      <DialogTitle id="dialog-title">{props.title || "Install Web App"}</DialogTitle>
+      <DialogTitle id="dialog-title" disableTypography>
+        <span style={{ display: 'inline-flex' }}>
+          {!!props.logo && fullScreen && <img src={props.logo} alt="logo" style={{ height: '32px', paddingRight: '16px' }} />}
+          <Typography variant="h6">{props.title || "Install Web App"}</Typography>
+        </span>
+      </DialogTitle>
       <DialogContent dividers={true}>
         <Grid container alignItems="center" style={{ height: '100%' }}>
-          {!!props.logo && (
+          {!!props.logo && !fullScreen && (
             <Grid item xs={12} sm={6}>
               <Box mr={1}>
                 <img src={props.logo} alt="logo" style={{ width: '100%' }} />
@@ -40,9 +45,9 @@ const InstallDialog = (props) => {
           )}
         </Grid>
       </DialogContent>
-      <InstallDialogAction 
-        platform={props.platform} 
-        onSubmit={props.onSubmit} 
+      <InstallDialogAction
+        platform={props.platform}
+        onSubmit={props.onSubmit}
         onClose={props.onClose}
         instructionTitle={props.instructionTitle}
         instructionActionOk={props.instructionActionOk}
